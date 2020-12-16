@@ -1,9 +1,9 @@
 using System.Runtime.CompilerServices;
 using System.Numerics;
 
-namespace Nethermind.Int256
+namespace Evo.Primitives
 {
-    public interface IInteger<T> where T : IInteger<T>
+    public interface Integer_I<T> where T : Integer_I<T>
     {
         void Add(in T a, out T res);
         void AddMod(in T a, in T m, out T res);

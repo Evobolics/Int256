@@ -1,11 +1,13 @@
 using System;
 using System.Numerics;
+using Evo.Constants;
+using Evo.Statics;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace Nethermind.Int256.Test
+namespace Evo.Primitives
 {
-    public class Int256Tests : UInt256TestsTemplate<Int256>
+    public class Int256_UT : UInt256TestsTemplate<Int256>
     {
 
         private static BigInteger Postprocess(BigInteger big)
@@ -14,7 +16,7 @@ namespace Nethermind.Int256.Test
             return new BigInteger(bytes.AsSpan().Slice(0, Math.Min(256 / 8, bytes.Length)));
         }
 
-        public Int256Tests() : base((BigInteger x) => new Int256(x), (int x) => new Int256(x), Postprocess, TestNumbers.Int256Max) { }
+        public Int256_UT() : base((x) => new Int256(x), (x) => new Int256(x), Postprocess, TestNumbers.Int256Max) { }
 
         [TestCaseSource(typeof(BinaryOps), nameof(BinaryOps.SignedTestCases))]
         public override void Add((BigInteger A, BigInteger B) test) => base.Add(test);
@@ -33,7 +35,7 @@ namespace Nethermind.Int256.Test
                 return;
             }
 
-            BigInteger resBigInt = ((test.A - test.B) % test.M) % (BigInteger.One << 256);
+            BigInteger resBigInt = (test.A - test.B) % test.M % (BigInteger.One << 256);
             resBigInt = postprocess(resBigInt);
 
             Int256 uint256a = convert(test.A);

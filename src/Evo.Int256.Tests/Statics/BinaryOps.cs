@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Numerics;
 
-namespace Nethermind.Int256.Test
+namespace Evo.Statics
 {
     public static class BinaryOps
     {

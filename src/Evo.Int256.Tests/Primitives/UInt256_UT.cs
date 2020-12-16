@@ -1,11 +1,13 @@
 using System;
 using System.Numerics;
+using Evo.Constants;
+using Evo.Statics;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace Nethermind.Int256.Test
+namespace Evo.Primitives
 {
-    public partial class UInt256TestsTemplate<T> where T : IInteger<T>
+    public partial class UInt256TestsTemplate<T> where T : Integer_I<T>
     {
         protected readonly Func<BigInteger, T> convert;
         protected readonly Func<int, T> convertFromInt;
@@ -78,7 +80,7 @@ namespace Nethermind.Int256.Test
         [TestCaseSource(typeof(BinaryOps), nameof(BinaryOps.TestCases))]
         public virtual void Multiply((BigInteger A, BigInteger B) test)
         {
-            BigInteger resBigInt = (test.A * test.B) % (BigInteger.One << 256);
+            BigInteger resBigInt = test.A * test.B % (BigInteger.One << 256);
             resBigInt = postprocess(resBigInt);
 
             T uint256a = convert(test.A);
@@ -96,7 +98,7 @@ namespace Nethermind.Int256.Test
             {
                 return;
             }
-            BigInteger resBigInt = ((test.A * test.B) % test.M) % (BigInteger.One << 256);
+            BigInteger resBigInt = test.A * test.B % test.M % (BigInteger.One << 256);
             resBigInt = postprocess(resBigInt);
 
             T uint256a = convert(test.A);
@@ -115,7 +117,7 @@ namespace Nethermind.Int256.Test
             {
                 return;
             }
-            BigInteger resBigInt = (test.A / test.B) % (BigInteger.One << 256);
+            BigInteger resBigInt = test.A / test.B % (BigInteger.One << 256);
             resBigInt = postprocess(resBigInt);
 
             T uint256a = convert(test.A);
@@ -214,9 +216,9 @@ namespace Nethermind.Int256.Test
         }
     }
 
-    public class UInt256Tests : UInt256TestsTemplate<UInt256>
+    public class UInt256_UT : UInt256TestsTemplate<UInt256>
     {
-        public UInt256Tests() : base((BigInteger x) => (UInt256)x, (int x) => (UInt256)x, x => x, TestNumbers.UInt256Max) { }
+        public UInt256_UT() : base((x) => (UInt256)x, (x) => (UInt256)x, x => x, TestNumbers.UInt256Max) { }
 
         [Test]
         public virtual void Zero_is_min_value()

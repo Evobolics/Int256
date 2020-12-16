@@ -4,6 +4,8 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
 
         <IsPackable>false</IsPackable>
+
+        <RootNamespace>Evo</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -14,7 +16,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Nethermind.Int256\Nethermind.Int256.csproj" />
+      <ProjectReference Include="..\Evo.Int256\Evo.Int256.csproj" />
     </ItemGroup>
 
 </Project>

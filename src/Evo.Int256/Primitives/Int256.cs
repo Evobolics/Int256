@@ -3,20 +3,20 @@ using System.Buffers.Binary;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 
-namespace Nethermind.Int256
+namespace Evo.Primitives
 {
-    public readonly struct Int256 : IComparable, IComparable<Int256>, IInteger<Int256>
+    public readonly struct Int256 : IComparable, IComparable<Int256>, Integer_I<Int256>
     {
         public static readonly Int256 Zero = (Int256)0UL;
         public static readonly Int256 One = (Int256)1UL;
         public static readonly Int256 MinusOne = -1L;
-        public static readonly Int256 Max = new Int256(((BigInteger.One << 255) - 1));
+        public static readonly Int256 Max = new Int256((BigInteger.One << 255) - 1);
 
         private readonly UInt256 value;
 
         public Int256(ReadOnlySpan<byte> bytes, bool isBigEndian)
         {
-            this.value = new UInt256(bytes, isBigEndian);
+            value = new UInt256(bytes, isBigEndian);
         }
 
         public Int256(UInt256 value)
@@ -28,12 +28,12 @@ namespace Nethermind.Int256
         {
             if (big.Sign < 0)
             {
-                (new Int256((UInt256)(-big))).Neg(out Int256 neg);
-                this.value = neg.value;
+                new Int256((UInt256)(-big)).Neg(out Int256 neg);
+                value = neg.value;
             }
             else
             {
-                this.value = (UInt256)big;
+                value = (UInt256)big;
             }
         }
 
@@ -47,7 +47,7 @@ namespace Nethermind.Int256
             }
             else
             {
-                this.value = new UInt256((ulong)n);
+                value = new UInt256((ulong)n);
             }
         }
 
@@ -89,7 +89,7 @@ namespace Nethermind.Int256
             var mt = m;
             if (mt.IsOne)
             {
-                res = Int256.Zero;
+                res = Zero;
                 return;
             }
 
@@ -134,7 +134,7 @@ namespace Nethermind.Int256
             var mt = m;
             if (mt.IsOne)
             {
-                res = Int256.Zero;
+                res = Zero;
                 return;
             }
 
@@ -181,7 +181,7 @@ namespace Nethermind.Int256
             res = new Int256(ures);
             int aSign = a.Sign;
             int bSign = b.Sign;
-            if ((aSign < 0 && bSign < 0) || (aSign >= 0 && bSign >= 0))
+            if (aSign < 0 && bSign < 0 || aSign >= 0 && bSign >= 0)
             {
                 return;
             }
@@ -199,7 +199,7 @@ namespace Nethermind.Int256
             }
             int xSign = x.Sign;
             int ySign = y.Sign;
-            if ((xSign < 0 && ySign >= 0) || (xSign >= 0 && ySign < 0))
+            if (xSign < 0 && ySign >= 0 || xSign >= 0 && ySign < 0)
             {
                 var xAbs = x;
                 var yAbs = y;
@@ -394,22 +394,22 @@ namespace Nethermind.Int256
         {
             var n1 = n / 2;
             var n2 = n - n1;
-            return (a >> n1) >> n2;
+            return a >> n1 >> n2;
         }
 
         private void Srsh64(out Int256 res)
         {
-            res = new Int256(new UInt256(this.value.u1, this.value.u2, this.value.u3, ulong.MaxValue));
+            res = new Int256(new UInt256(value.u1, value.u2, value.u3, ulong.MaxValue));
         }
 
         private void Srsh128(out Int256 res)
         {
-            res = new Int256(new UInt256(this.value.u2, this.value.u3, ulong.MaxValue, ulong.MaxValue));
+            res = new Int256(new UInt256(value.u2, value.u3, ulong.MaxValue, ulong.MaxValue));
         }
 
         private void Srsh192(out Int256 res)
         {
-            res = new Int256(new UInt256(this.value.u3, ulong.MaxValue, ulong.MaxValue, ulong.MaxValue));
+            res = new Int256(new UInt256(value.u3, ulong.MaxValue, ulong.MaxValue, ulong.MaxValue));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -444,7 +444,7 @@ namespace Nethermind.Int256
             }
             res = x;
             ulong z0 = x.value.u0, z1 = x.value.u1, z2 = x.value.u2, z3 = x.value.u3;
-            ulong a = UInt256.Lsh(ulong.MaxValue, 64 - (n % 64));
+            ulong a = UInt256.Lsh(ulong.MaxValue, 64 - n % 64);
             // Big swaps first
             if (n > 192)
             {
@@ -565,7 +565,7 @@ namespace Nethermind.Int256
                 throw new InvalidOperationException();
             }
 
-            return CompareTo((Int256) obj);
+            return CompareTo((Int256)obj);
         }
 
         public int CompareTo(Int256 b)

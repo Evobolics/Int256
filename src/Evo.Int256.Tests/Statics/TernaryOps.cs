@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using System.Linq;
 
-namespace Nethermind.Int256.Test
+namespace Evo.Statics
 {
     public static class TernaryOps
     {

@@ -1,13 +1,13 @@
 using System.Numerics;
 using System.Collections.Generic;
 using System.Linq;
+using Evo.Constants;
 
-namespace Nethermind.Int256.Test
+namespace Evo.Statics
 {
     public static class UnaryOps
     {
-        public static IEnumerable<BigInteger> TestCases = Enumerable.Concat(
-        new[]{
+        public static IEnumerable<BigInteger> TestCases = (new[]{
             0,
             1,
             2,
@@ -24,12 +24,11 @@ namespace Nethermind.Int256.Test
             TestNumbers.UInt128Max,
             TestNumbers.UInt192Max,
             TestNumbers.UInt256Max,
-        },
+        }).Concat(
         RandomUnsigned(5)
                               );
 
-        public static IEnumerable<BigInteger> SignedTestCases = Enumerable.Concat(
-        new[]{
+        public static IEnumerable<BigInteger> SignedTestCases = (new[]{
             0,
             1,
             2,
@@ -47,7 +46,7 @@ namespace Nethermind.Int256.Test
             TestNumbers.UInt192Max,
             TestNumbers.Int256Max,
             TestNumbers.Int256Min,
-        },
+        }).Concat(
         RandomSigned(5)
                               );
 
@@ -84,7 +83,7 @@ namespace Nethermind.Int256.Test
             for (int i = 0; i < count; i++)
             {
                 rand.NextBytes(data);
-                data[data.Length - 1] &= (byte)0x7F;
+                data[data.Length - 1] &= 0x7F;
                 yield return new BigInteger(data);
             }
         }

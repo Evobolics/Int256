@@ -1,8 +1,9 @@
 ﻿using System.Diagnostics;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Running;
+using Evo.Benchmarks;
 
-namespace Nethermind.Int256.Benchmark
+namespace Evo.Programs
 {
     class Program
     {
@@ -16,7 +17,7 @@ namespace Nethermind.Int256.Benchmark
 
             BenchmarkRunner.Run<AddUnsigned>(config);
             BenchmarkRunner.Run<SubtractUnsigned>(config);
-            BenchmarkRunner.Run<AddModUnsinged>(config);
+            BenchmarkRunner.Run<AddModUnsigned>(config);
             BenchmarkRunner.Run<SubtractModUnsinged>(config);
             BenchmarkRunner.Run<MultiplyUnsigned>(config);
             BenchmarkRunner.Run<MultiplyModUnsigned>(config);
@@ -28,7 +29,7 @@ namespace Nethermind.Int256.Benchmark
 
             BenchmarkRunner.Run<AddSigned>(config);
             BenchmarkRunner.Run<SubtractSigned>(config);
-            BenchmarkRunner.Run<AddModSinged>(config);
+            BenchmarkRunner.Run<AddModSigned>(config);
             BenchmarkRunner.Run<SubtractModSigned>(config);
             BenchmarkRunner.Run<MultiplySigned>(config);
             BenchmarkRunner.Run<MultiplyModSigned>(config);

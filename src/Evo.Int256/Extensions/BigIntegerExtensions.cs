@@ -1,7 +1,7 @@
 using System;
 using System.Numerics;
 
-namespace Nethermind.Int256
+namespace System.Numerics
 {
     public static class BigIntegerExtensions
     {
