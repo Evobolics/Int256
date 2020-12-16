@@ -1,10 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nethermind.Int256", "Nethermind.Int256\Nethermind.Int256.csproj", "{0C33CF86-59C5-44A5-9801-A5F9718F25F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evo.Int256", "Evo.Int256\Evo.Int256.csproj", "{0C33CF86-59C5-44A5-9801-A5F9718F25F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nethermind.Int256.Benchmark", "Nethermind.Int256.Benchmark\Nethermind.Int256.Benchmark.csproj", "{4E35AD6D-A4DF-4AEF-AE18-3ABBE5DD6AC1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evo.Int256.Benchmark", "Evo.Int256.Benchmark\Evo.Int256.Benchmark.csproj", "{4E35AD6D-A4DF-4AEF-AE18-3ABBE5DD6AC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nethermind.Int256.Test", "Nethermind.Int256.Test\Nethermind.Int256.Test.csproj", "{7B474C47-F65A-4EAC-B76D-4DD1A536F6D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evo.Int256.Test", "Evo.Int256.Test\Evo.Int256.Test.csproj", "{7B474C47-F65A-4EAC-B76D-4DD1A536F6D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
