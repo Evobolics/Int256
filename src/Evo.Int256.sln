@@ -9,6 +9,28 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evo.Int256.Benchmarks", "Ev
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evo.Int256.Tests", "Evo.Int256.Tests\Evo.Int256.Tests.csproj", "{7B474C47-F65A-4EAC-B76D-4DD1A536F6D1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. eng", "1. eng", "{A2264027-E15B-4B2D-B060-C55F4463D70D}"
+	ProjectSection(SolutionItems) = preProject
+		..\eng\sync.yml = ..\eng\sync.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. solution", "0. solution", "{350D0748-2B0B-4E2C-A8E3-8B5746E71BB7}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "targets", "targets", "{21D99E94-2E00-44FD-964E-F204CCB1892C}"
+	ProjectSection(SolutionItems) = preProject
+		..\eng\targets\all.targets = ..\eng\targets\all.targets
+		..\eng\targets\net21.targets = ..\eng\targets\net21.targets
+		..\eng\targets\net21_packaged.targets = ..\eng\targets\net21_packaged.targets
+		..\eng\targets\net50.targets = ..\eng\targets\net50.targets
+		..\eng\targets\net50_packaged.targets = ..\eng\targets\net50_packaged.targets
+		..\eng\targets\packaged.targets = ..\eng\targets\packaged.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +52,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{21D99E94-2E00-44FD-964E-F204CCB1892C} = {A2264027-E15B-4B2D-B060-C55F4463D70D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {06A318E3-4F79-4395-A85B-5FCD3C992113}
