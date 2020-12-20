@@ -1,9 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-    <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
-        <Nullable>enable</Nullable>
-        <RootNamespace>Evo</RootNamespace>
-    </PropertyGroup>
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../eng/targets/net21_packaged.targets" />
+  <PropertyGroup>
+      <Nullable>enable</Nullable>
+      <RootNamespace>Evo</RootNamespace>
+  </PropertyGroup>
 
 </Project>
