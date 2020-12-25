@@ -2,6 +2,5 @@
   <Import Project="../../eng/targets/net21_packaged.targets" />
   <PropertyGroup>
       <Nullable>enable</Nullable>
-      <RootNamespace>Evo</RootNamespace>
   </PropertyGroup>
 </Project>

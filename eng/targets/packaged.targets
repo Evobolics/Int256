@@ -5,10 +5,9 @@
     <EvoBuildNumber>20201201.10</EvoBuildNumber>
     <MajorVersion>$(EvoBuildNumber.Substring(2, 2))</MajorVersion>
     <MinorVersion>0</MinorVersion>
-    <EvoBuildVersionSuffix>$(EvoBuildNumber.Substring(2, $([MSBuild]::Subtract($(EvoBuildNumber.Length), 2))))</EvoBuildVersionSuffix>
-    <EvoAssemblyVersionSuffix>$(EvoBuildNumber.Substring(4, $([MSBuild]::Subtract($(EvoBuildNumber.Length), 4))))</EvoAssemblyVersionSuffix>
-    <VersionPrefix>$(MajorVersion).$(MinorVersion).$(EvoBuildVersionSuffix)</VersionPrefix>
-    <AssemblyVersion>$(MajorVersion).$(MinorVersion).$(EvoAssemblyVersionSuffix)</AssemblyVersion>
+    <EvoVersionSuffix>$(EvoBuildNumber.Substring(4, $([MSBuild]::Subtract($(EvoBuildNumber.Length), 4))))</EvoVersionSuffix>
+    <VersionPrefix>$(MajorVersion).$(MinorVersion).$(EvoVersionSuffix)</VersionPrefix>
+    <AssemblyVersion>$(MajorVersion).$(MinorVersion).$(EvoVersionSuffix)</AssemblyVersion>
     <IsPackable>true</IsPackable>
     <!-- https://docs.microsoft.com/en-us/nuget/reference/errors-and-warnings/nu5105 -->
     <NoWarn>NU5105</NoWarn>
