@@ -8,7 +8,7 @@
       <Copyright>Copyright (c) 2020</Copyright>
       <PackageProjectUrl>https://github.com/Evobolics/int256</PackageProjectUrl>
       <PackageTags>Int256 Crypto Ethereum Evobolics BigInteger Blockchain</PackageTags>
-      <PackageLicenseExpression>BSD-3-Clause OR MIT</PackageLicenseExpression>
+      <PackageLicenseExpression>BSD-3-Clause AND MIT</PackageLicenseExpression>
       <RepositoryUrl>https://github.com/Evobolics/int256</RepositoryUrl>
       <RepositoryType>git</RepositoryType>
       <PackageReleaseNotes>The code for this package was written by a combination of Evobolics, Nethermind and the uint256 Authors.</PackageReleaseNotes>
