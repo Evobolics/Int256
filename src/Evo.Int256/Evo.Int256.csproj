@@ -11,6 +11,6 @@
       <PackageLicenseExpression>BSD-3-Clause AND MIT</PackageLicenseExpression>
       <RepositoryUrl>https://github.com/Evobolics/int256</RepositoryUrl>
       <RepositoryType>git</RepositoryType>
-      <PackageReleaseNotes>The code for this package was written by a combination of Evobolics, Nethermind and the uint256 Authors.</PackageReleaseNotes>
+      <PackageReleaseNotes>The package's code was written by Evobolics, Nethermind and the uint256 Authors.</PackageReleaseNotes>
   </PropertyGroup>
 </Project>
