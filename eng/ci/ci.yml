@@ -25,5 +25,5 @@ stages:
 - template: '/ci/stages.yml@pipelineTemplates'
   parameters:
     solutionFileName: Evo.Int256.sln
-    externalNugetFeed: ''
+    externalNugetFeed: 'NugetDotOrg-Evo'
     
