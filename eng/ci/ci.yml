@@ -18,13 +18,13 @@ resources:
     - repository: pipelineTemplates
       name: Evo/PipelineTemplates
       type: git
-      ref: refs/tags/v0.1.38
+      ref: refs/tags/v0.1.39
       trigger: none
 
 stages:
 - template: '/ci/stages.yml@pipelineTemplates'
   parameters:
     solutionFileName: Evo.Int256.sln
-    externalNugetFeed: ''
-    # externalNugetFeed: 'NugetDotOrg-Evo'
+    # externalNugetFeed: ''
+    externalNugetFeed: 'NugetDotOrg-Evo'
     
