@@ -2,5 +2,15 @@
   <Import Project="../../eng/targets/net21_packaged.targets" />
   <PropertyGroup>
       <Nullable>enable</Nullable>
+      <Authors>Evobolics</Authors>
+      <Company>Evobolics Digital, LLC</Company>
+      <Description>A implementation of an 256 bit integer.</Description>
+      <Copyright>Copyright (c) 2020</Copyright>
+      <PackageProjectUrl>https://github.com/Evobolics/int256</PackageProjectUrl>
+      <PackageTags>Int256 Crypto Ethereum Evobolics BigInteger Blockchain</PackageTags>
+      <PackageLicenseExpression>BSD-3-Clause OR MIT</PackageLicenseExpression>
+      <RepositoryUrl>https://github.com/Evobolics/int256</RepositoryUrl>
+      <RepositoryType>git</RepositoryType>
+      <PackageReleaseNotes>The code for this package was written by a combination of Evobolics, Nethermind and the uint256 Authors.</PackageReleaseNotes>
   </PropertyGroup>
 </Project>
