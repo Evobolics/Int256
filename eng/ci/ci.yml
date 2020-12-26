@@ -18,7 +18,7 @@ resources:
     - repository: pipelineTemplates
       name: Evo/PipelineTemplates
       type: git
-      ref: refs/tags/v0.1.38
+      ref: refs/tags/v0.1.39
       trigger: none
 
 stages:
